@@ -1,12 +1,36 @@
+puts "Destroying users..."
+User.destroy_all
+puts "Done!"
+
+puts "Creating user tim..."
 tim = User.create!(
   nickname: "tim",
   email: "tim@tim.tim",
   password: "secret"
 )
+puts "Done!"
 
-post = Post.create!(
+puts "Creating posts..."
+
+Post.create!(
   url: "https://dev.to/molly/level-up-your-ruby-skillz-working-with-hashes-4bid",
   title: "Level Up Your Ruby Skillz: Working With Hashes ",
-  content: "Last week I tackled Ruby arrays and shared some of the methods I find the most useful for working with them. This week I want to talk about HASHES! Before I dive head first into my favorite methods, I want to give a quick summary of what a hash is in Ruby and how it works. The definition of a Hash straight from the docs themselves:",
+  content: "Wanted t osend this to a friend and wondering if it's beginner-friendly enough, what do you think?",
   user: tim
 )
+
+Post.create!(
+  url: "https://world.hey.com/dhh/employee-surveillance-software-is-managerial-bankruptcy-94e48a08",
+  title: "Employee surveillance software is managerial bankruptcy",
+  content: "Hot take but good take",
+  user: tim
+)
+
+Post.create!(
+  url: "https://sites.google.com/site/steveyegge2/anti-anti-hype",
+  title: "anti-anti-hype",
+  content: "Another great article by Steve. What do you think?",
+  user: tim
+)
+
+puts "Done!"
