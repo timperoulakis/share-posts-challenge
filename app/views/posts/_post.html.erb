@@ -1,0 +1,8 @@
+<div class="card my-5 border border-primary">
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h2>
+      <h6 class="card-subtitle mb-2 text-muted"><%= "posted by #{post.user.nickname} - #{time_ago_in_words(post.created_at)} ago" %></h6>
+      <p><%= post.content %></p>
+      <%= link_to "Go to article", post.url, class: "btn btn-primary", target: "_blank" %>
+    </div>
+</div>
