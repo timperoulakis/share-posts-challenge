@@ -2,10 +2,15 @@ puts "Destroying users..."
 User.destroy_all
 puts "Done!"
 
-puts "Creating user tim..."
+puts "Creating users..."
 tim = User.create!(
   nickname: "tim",
   email: "tim@tim.tim",
+  password: "secret"
+)
+frodo = User.create!(
+  nickname: "Frodo",
+  email: "fbaggins@hobbits.com",
   password: "secret"
 )
 puts "Done!"
@@ -33,4 +38,14 @@ Post.create!(
   user: tim
 )
 
+puts "Done!"
+
+puts "Creating comments..."
+Post.all.sample(2).each do |post|
+  Comment.create!(
+    content: "Very good article, thanks for sharing",
+    post: post,
+    user: frodo
+  )
+end
 puts "Done!"
