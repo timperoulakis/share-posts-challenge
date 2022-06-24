@@ -1,5 +1,5 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %>
-<% end %>
+<div class="card-group row mt-3" style="list-style: none;">
+    <% @posts.each do |post| %>
+      <%= render partial: "pages/post", locals: { post: post } %>
+    <% end %>
+</div>
